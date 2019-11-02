@@ -26,7 +26,12 @@ REQUIRED = [
 
 # What packages are optional?
 EXTRAS = {
-    # "fancy feature": ["django"],
+    "dev": [
+        "pytest",
+        "rope",
+        "flake8",
+        "coverage"
+    ]
 }
 
 # The rest you shouldn"t have to touch too much :)
