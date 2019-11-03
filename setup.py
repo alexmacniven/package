@@ -26,7 +26,12 @@ REQUIRED = [
 
 # What packages are optional?
 EXTRAS = {
-    # "fancy feature": ["django"],
+    "dev": [
+        "pytest",
+        "rope",
+        "flake8",
+        "coverage"
+    ]
 }
 
 # The rest you shouldn"t have to touch too much :)
@@ -79,11 +84,7 @@ class UploadCommand(Command):
             pass
 
         self.status("Building Source and Wheel (universal) distribution…")
-        os.system(
-            "{0} setup.py sdist bdist_wheel --universal".format(
-                sys.executable
-            )
-        )
+        os.system("{0} setup.py sdist bdist_wheel".format(sys.executable))
 
         self.status("Uploading the package to PyPI via Twine…")
         os.system("twine upload dist/*")
