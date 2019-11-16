@@ -28,9 +28,11 @@ REQUIRED = [
 EXTRAS = {
     "dev": [
         "pytest",
+        "pytest-mock",
         "rope",
         "flake8",
-        "coverage"
+        "coverage",
+        "twine"
     ]
 }
 
